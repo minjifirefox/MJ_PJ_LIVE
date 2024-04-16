@@ -246,7 +246,7 @@ body {
 .common img {
   padding: 50px;
   width: 400px;
-  border-radius: 50%;
+
 }
 
 .common h1 {
@@ -275,6 +275,10 @@ body {
   transition: 0.4s ease-in-out;
   filter: grayscale(80%);
 }
+.work ul li img {
+  border-radius: 50%;
+  
+}
 .work ul li:nth-child(1) {
   left: -300%;
 }
@@ -286,6 +290,8 @@ body {
   left: -100%;
 }
 .work ul li:nth-child(4) {
+  
+  /* border-radius: none; */
   left: 0%;
   filter: none;
 }
@@ -299,8 +305,10 @@ body {
 .work ul li:nth-child(7) {
   left: 300%;
 }
-.work ul li:nth-child(4):hover {
+.work ul li:nth-child(4):hover img {
   transform: scale(1.2);
+  border-radius: 0 0 0 0;
+  transition: .4s ease-in-out;
 }
 
 .contact-area {
