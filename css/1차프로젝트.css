@@ -1,0 +1,353 @@
+@charset "utf-8";
+
+/* 1차프로젝트 CSS */
+
+/* 12그리드 불러오기 */
+@import url(./reset.css);
+@import url(./grid_12_float.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gasoek+One&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 공사중 표시 */
+/* body * {
+    outline: 2px dashed gray;
+} */
+
+.main-area {
+  height: 100vh;
+}
+
+/* .circle{
+    position: absolute;
+    top: 10em;
+    left: 60em;
+    width: 1000px;
+    height: 1000px;
+    background-color: lavender;
+    border-radius: 1000px;
+} */
+
+.introduce-area {
+  height: 100vh;
+}
+
+.work-area1 {
+  height: 100vh;
+}
+
+.work-area2 {
+  height: 100vh;
+}
+
+.work-area3 {
+  height: 100vh;
+}
+
+/* 인디케이터 */
+.indic {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 세로중앙이동 */
+  left: 5%;
+  /* width: 20px; */
+  /* outline: 3px dotted blue; */
+}
+
+.indic li {
+  width: 100%;
+  height: 30px;
+  margin: 3px 0;
+  cursor: pointer; /* 손가락모양 */
+}
+
+/* a요소 */
+.indic a {
+  display: block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: 4px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 1px #777;
+  transition: width 0.4s;
+}
+
+/* 마우스 오버시 + 클래스 "on" */
+.indic li:hover a,
+.indic li.on a {
+  transform: scale(1.5);
+  /* width: 150%; */
+  background-color: rgb(233, 120, 154);
+}
+
+/* 설명글자숨기기 */
+.indic span {
+  display: none;
+}
+
+/* body{
+            background-color: rgb(22, 21, 21);
+        } */
+body {
+  background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.main-area {
+  background-color: lavender;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 9999;
+}
+.menu ul.gnb {
+  display: flex;
+  justify-content: flex-end;
+}
+.menu ul.gnb a {
+  display: block;
+  padding: 0 13px;
+  white-space: nowrap;
+
+  font-size: 1.7rem;
+  line-height: 60px;
+  font-weight: bold;
+}
+.menu ul.gnb a:hover,
+.menu ul.gnb li.on a {
+  color: #ffffff;
+  text-shadow: -1px 0px #252525, 0px 1px #252525, 1px 0px #252525,
+    0px -1px #252525;
+}
+.smenu {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.menu ul > li:hover .smenu {
+  height: 180px;
+}
+.menu {
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.pg {
+  position: relative;
+  height: 100vh;
+  cursor: pointer;
+}
+.pg1 {
+  clip-path: circle(30% at 80% 60%);
+  background-image: linear-gradient(to top right, #5b83b3, #ec817b, #9b82bb);
+  background-attachment: fixed;
+}
+.pg1.on {
+  animation: circle-ani 2s ease-in-out 0.5s forwards;
+  will-change: clip-path;
+}
+
+@keyframes circle-ani {
+  0% {
+    clip-path: circle(30% at 80% 60%);
+  }
+  100% {
+    clip-path: circle(100% at 70% 60%);
+  }
+}
+
+/* 민지캐릭터 */
+.pic {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 5%;
+  width: 40vw;
+  /* transform: scale(10%); */
+  /* perspective: 200vh; */
+}
+.pic img {
+  width: 100%;
+  /* animation: pic-ani 1s ease-in-out infinite alternate; */
+}
+.twinkle > img {
+  overflow: hidden;
+}
+/* @keyframes pic-ani {
+            0%{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            30%{
+                transform: rotateY(10deg) rotateX(10deg);
+            }
+            60%{
+                transform: rotateY(-10deg) rotateX(-10deg);
+            }
+            100%{
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+        } */
+
+.title {
+  position: absolute;
+  /* z-index: 999; */
+  top: 30%;
+  right: 5%;
+  font-size: 5rem;
+  text-align: right;
+}
+
+.introduce-area {
+  position: relative;
+  height: 100vh;
+}
+
+.intropic img {
+  position: absolute;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
+}
+.comment {
+  position: relative;
+  height: 100vh;
+}
+
+.comment1 {
+  position: absolute;
+  top: 25vh;
+  left: 85vh;
+  font-size: 50px;
+  font-family: "Gasoek One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.comment2 {
+  position: absolute;
+  top: 35vh;
+  left: 85vh;
+  line-height: 50px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.common img {
+  padding: 50px;
+  width: 400px;
+  border-radius: 50%;
+}
+
+.common h1 {
+  text-align: center;
+  transform: translateY(60px);
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.work {
+  position: relative;
+  height: 100vh;
+}
+.work ul {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* outline: 2px dashed #ccc; */
+}
+.work ul li {
+  position: absolute;
+  transition: 0.4s ease-in-out;
+  filter: grayscale(80%);
+}
+.work ul li:nth-child(1) {
+  left: -300%;
+}
+.work ul li:nth-child(2) {
+  left: -200%;
+  opacity: 0;
+}
+.work ul li:nth-child(3) {
+  left: -100%;
+}
+.work ul li:nth-child(4) {
+  left: 0%;
+  filter: none;
+}
+.work ul li:nth-child(5) {
+  left: 100%;
+}
+.work ul li:nth-child(6) {
+  left: 200%;
+  opacity: 0;
+}
+.work ul li:nth-child(7) {
+  left: 300%;
+}
+.work ul li:nth-child(4):hover {
+  transform: scale(1.2);
+}
+
+.contact-area {
+  position: relative;
+  height: 100vh;
+}
+
+.contact-comment1 {
+  position: absolute;
+  top: 30vh;
+  left: 34vh;
+  text-align: right;
+  font-family: "Gasoek One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.contact-comment2 {
+  position: absolute;
+  top: 70vh;
+  left: 123vh;
+  font-family: "Gasoek One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.end-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* SNS */
+.sns-box {
+  position: absolute;
+  top: 42%;
+  left: 31%;
+}
+.sns-box {
+  /* 플렉스 자식에서 왼쪽 마진을 auto로 주면 오른쪽 끝으로 이동함 */
+  margin-left: auto;
+}
+.sns-box ol {
+  /* 플렉스 박스 */
+  display: flex;
+  gap: 0 10px;
+}
+.sns-box a {
+  font-size: 2rem;
+}
