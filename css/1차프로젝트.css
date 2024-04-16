@@ -308,6 +308,11 @@ body {
 .work ul li:nth-child(4):hover img {
   transform: scale(1.2);
   border-radius: 0 0 0 0;
+  filter: drop-shadow(3px 3px 30px #3b2e2e9d)
+  /* box-shadow: #3b2e2e9d 1px 1px 2px 3px; */
+  /* transition: .4s ease-in-out; */
+}
+.work ul li:nth-child(4) img {
   transition: .4s ease-in-out;
 }
 
